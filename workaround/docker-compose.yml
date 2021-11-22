@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  python-pic-save:
+    build: .
+    volumes:
+      - /pictures:/pictures
+    deploy:
+      mode: global
+      placement:
+        constraints:
+          - node.labels.connect==cam
+
+volumes:
+  pics:
+    external: true
