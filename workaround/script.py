@@ -5,5 +5,9 @@ camera = PiCamera()
 camera.resolution = (1024, 768)
 camera.start_preview()
 sleep(2)
-camera.capture("output.jpg")
+
+i = 0
+while i < 10000:
+    camera.capture("/pictures/output.jpg")
+    sleep(60)
 exit()
