@@ -5,5 +5,5 @@ RUN apt update \
     && apt install nano -y \
     && apt clean
 
-RUN mkdir /pics
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+RUN mkdir /pictures
+CMD [ "python", "./script.py" ]
