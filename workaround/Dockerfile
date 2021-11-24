@@ -6,4 +6,4 @@ RUN apt update \
     && apt clean
 
 RUN mkdir /pictures
-CMD [ "python", "./script.py" ]
+ENTRYPOINT ["/bin/sh", "-c"]

@@ -9,5 +9,6 @@ sleep(2)
 i = 0
 while i < 10000:
     camera.capture("/pictures/output" + i + ".jpg")
+    print(i + "picture saved")
     sleep(60)
 exit()
