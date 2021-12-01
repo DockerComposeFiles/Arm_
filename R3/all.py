@@ -25,6 +25,8 @@ print(sensor.relative_humidity)
 # print("Druck: ", druck, "hPa")
 
 GPIO.setmode(GPIO.BCM)
+fields = [17, 27, 22, 23, 8, 7, 25, 16, 20, 21]
+
 GPIO.setup(17, GPIO.OUT)
 GPIO.setup(27, GPIO.OUT)
 GPIO.setup(22, GPIO.OUT)
@@ -52,13 +54,8 @@ if sensor.temperature > 26:
 if sensor.temperature > 27:
     GPIO.setup(8, 1)
 
-# more
-if sensor.temperature > 28:
-    GPIO.setup(23, 1)
-    GPIO.setup(8, 1)
+time.sleep(2)
 
-time.sleep(5)
-fields = [17, 27, 22, 23, 8, 7, 25, 16, 20, 21]
 for x in fields:
     GPIO.output(x, 1)
     time.sleep(0.1)
