@@ -59,9 +59,9 @@ if sensor.temperature > 27:
 
 time.sleep(2)
 
-for x in fields:
-    GPIO.output(x, 1)
-    time.sleep(0.2)
-    GPIO.output(x, 0)
+# for x in fields:
+#     GPIO.output(x, 1)
+#     time.sleep(0.2)
+#     GPIO.output(x, 0)
 
 GPIO.cleanup()
