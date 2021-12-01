@@ -76,7 +76,7 @@ while 1:
 #    if sensor.temperature > 27.5:
 #        GPIO.output(8, 1)
 
-    time.sleep(3)
+    time.sleep(2)
 
 # for x in fields:
 #     GPIO.output(x, 1)
