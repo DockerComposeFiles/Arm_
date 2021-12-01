@@ -11,16 +11,6 @@ from adafruit_htu21d import HTU21D
 # Lampen
 import RPi.GPIO as GPIO
 
-# Create sensor object, communicating over the board's default I2C bus
-i2c = board.I2C()  # uses board.SCL and board.SDA
-sensor = HTU21D(i2c)
-print("\nTemperature: %0.1f C" % sensor.temperature)
-print("Humidity: %0.1f %%" % sensor.relative_humidity)
-
-temperatur, druck, x = bme280.readBME280All()
-print("Temperatur : ", temperatur, "C")
-print("Druck: ", druck, "hPa")
-
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17, GPIO.OUT)
 GPIO.setup(27, GPIO.OUT)
@@ -38,6 +28,18 @@ for x in fields:
     GPIO.output(x, 1)
     time.sleep(0.5)
     GPIO.output(x, 0)
+
+# Create sensor object, communicating over the board's default I2C bus
+i2c = board.I2C()  # uses board.SCL and board.SDA
+sensor = HTU21D(i2c)
+print("\nTemperature: %0.1f C" % sensor.temperature)
+print("Humidity: %0.1f %%" % sensor.relative_humidity)
+
+temperatur, druck, x = bme280.readBME280All()
+print("Temperatur : ", temperatur, "C")
+print("Druck: ", druck, "hPa")
+
+
 GPIO.cleanup()
 
 
