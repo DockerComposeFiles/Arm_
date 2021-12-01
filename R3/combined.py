@@ -2,14 +2,16 @@
 # SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
 # SPDX-License-Identifier: MIT
 
+# Lampen
+import RPi.GPIO as GPIO
+
 import time
 # BMP
 import bme280
 # HTU
 import board
 from adafruit_htu21d import HTU21D
-# Lampen
-import RPi.GPIO as GPIO
+
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17, GPIO.OUT)
