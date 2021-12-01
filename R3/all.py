@@ -17,9 +17,12 @@ sensor = HTU21D(i2c)
 print("\nTemperature: %0.1f C" % sensor.temperature)
 print("Humidity: %0.1f %%" % sensor.relative_humidity)
 
-temperatur, druck, x = bme280.readBME280All()
-print("Temperatur : ", temperatur, "C")
-print("Druck: ", druck, "hPa")
+print(sensor.temperature)
+print(sensor.relative_humidity)
+
+#temperatur, druck, x = bme280.readBME280All()
+#print("\nTemperatur : ", temperatur, "C")
+#print("Druck: ", druck, "hPa")
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17, GPIO.OUT)
@@ -36,6 +39,13 @@ GPIO.setup(21, GPIO.OUT)
 fields = [17, 27, 22, 23, 8, 7, 25, 16, 20, 21]
 for x in fields:
     GPIO.output(x, 1)
-    time.sleep(0.5)
+    time.sleep(0.1)
     GPIO.output(x, 0)
+
+time.sleep(5)
+if sensor.temperature <= 25:
+    GPIO.setup(17, 1)
+    time.sleep(5)
+    GPIO.setup(17, 0)
+
 GPIO.cleanup()
