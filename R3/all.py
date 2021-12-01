@@ -29,10 +29,10 @@ GPIO.setmode(GPIO.BCM)
 fields = [17, 27, 22, 23, 8, 7, 25, 16, 20, 21]
 tf = [17, 27, 22, 23, 8]
 hf = [7, 25, 16, 20, 21]
-e = 20
-k = 20
 
 while 1:
+    e = 20
+    k = 20
     for y in fields:
         GPIO.setup(y, GPIO.OUT)
 
