@@ -31,8 +31,8 @@ tf = [17, 27, 22, 23, 8]
 hf = [7, 25, 16, 20, 21]
 
 while 1:
-    e = 20
-    k = 20
+    e = 23
+    k = 30
     for y in fields:
         GPIO.setup(y, GPIO.OUT)
 
@@ -48,14 +48,14 @@ while 1:
 # GPIO.setup(21, GPIO.OUT)
 
     for a in tf:
-        e = e + 2
+        e = e + 1
         if sensor.temperature > e:
             GPIO.output(a, 1)
         else:
             GPIO.output(a, 0)
 
     for z in hf:
-        k = k + 2
+        k = k + 1
         if sensor.relative_humidity > k:
             GPIO.output(z, 1)
         else:
