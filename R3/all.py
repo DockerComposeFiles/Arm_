@@ -42,20 +42,20 @@ for y in fields:
 # GPIO.setup(21, GPIO.OUT)
 
 # def
-if sensor.temperature > 23:
-    GPIO.setup(17, 1)
+if sensor.temperature > 23.5:
+    GPIO.output(17, 1)
 
-if sensor.temperature > 24:
-    GPIO.setup(27, 1)
+if sensor.temperature > 24.5:
+    GPIO.output(27, 1)
 
-if sensor.temperature > 25:
-    GPIO.setup(22, 1)
+if sensor.temperature > 25.5:
+    GPIO.output(22, 1)
 
-if sensor.temperature > 26:
-    GPIO.setup(23, 1)
+if sensor.temperature > 26.5:
+    GPIO.output(23, 1)
 
-if sensor.temperature > 27:
-    GPIO.setup(8, 1)
+if sensor.temperature > 27.5:
+    GPIO.output(8, 1)
 
 time.sleep(2)
 
